@@ -1,0 +1,92 @@
+<header>
+  <div class="top w-full h-10 bg-neutral-black-B900 flex items-center justify-center">
+    <p class="text-center text-white text-[14px]">Get 25% OFF on your first order. Order Now</p>
+  </div>
+  <div class="bottom w-full h-[84px]">
+    <div class="container">
+      <div class="bottom-inner flex items-center justify-between w-full h-[84px] max-[950px]:justify-around">
+        <img [src]="logo" alt="LOGO">
+        <nav class="max-[950px]:hidden">
+          <ul class="text-neutral-black-B500 dark:text-white flex items-center gap-8">
+            <li>Home</li>
+            <li>
+              <details class="dropdown">
+                <summary class="cursor-pointer">Categories <fa-icon [icon]="faAngle" /> </summary>
+                <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                  <li><a>Item 1</a></li>
+                  <li><a>Item 2</a></li>
+                </ul>
+              </details>
+            </li>
+            <li>About</li>
+            <li>Contact</li>
+          </ul>
+        </nav>
+        <div class="profile flex items-center gap-8 max-[950px]:hidden">
+          <label class="input input-bordered flex items-center gap-2">
+            <input type="text" class="grow" placeholder="Search" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+              class="h-4 w-4 opacity-70">
+              <path
+                fill-rule="evenodd"
+                d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+                clip-rule="evenodd" />
+            </svg>
+          </label>
+          <fa-icon [icon]="faCart" />
+          <fa-icon [icon]="faUser" />
+        </div>
+
+        <div class="drawer drawer-end hidden max-[950px]:block static w-20">
+          <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
+          <div class="drawer-content">
+            <label for="my-drawer-4" class="cursor-pointer">
+              <fa-icon [icon]="faMenu"  size="3x"/>
+            </label>
+          </div>
+          <div class="drawer-side">
+            <label for="my-drawer-4" aria-label="close sidebar" class="drawer-overlay"></label>
+            <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4 gap-5">
+              <nav class="">
+                <ul class="text-neutral-black-B500 dark:text-white flex flex-col items-center gap-8">
+                  <li>Home</li>
+                  <li>
+                    <details class="dropdown">
+                      <summary class="cursor-pointer">Categories </summary>
+                      <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                        <li><a>Item 1</a></li>
+                        <li><a>Item 2</a></li>
+                      </ul>
+                    </details>
+                  </li>
+                  <li>About</li>
+                  <li>Contact</li>
+                </ul>
+              </nav>
+              <div class="profile flex items-center gap-8 flex-col">
+                <label class="input input-bordered flex items-center gap-2">
+                  <input type="text" class="grow" placeholder="Search" />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 16 16"
+                    fill="currentColor"
+                    class="h-4 w-4 opacity-70">
+                    <path
+                      fill-rule="evenodd"
+                      d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+                      clip-rule="evenodd" />
+                  </svg>
+                </label>
+                <fa-icon [icon]="faCart" />
+                <fa-icon [icon]="faUser" />
+              </div>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

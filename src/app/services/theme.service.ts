@@ -1,5 +1,5 @@
 
-import {inject, Injectable, signal} from '@angular/core';
+import {EventEmitter, inject, Injectable, signal} from '@angular/core';
 import {DOCUMENT} from '@angular/common';
 
 export type Theme = 'dim' | 'light';
@@ -14,6 +14,7 @@ export class ThemeService {
   private readonly currentTheme= signal<Theme>('light')
   private readonly themeKey = 'preferred-theme';
   private readonly dataTheme = 'data-theme'
+  themeChange : EventEmitter<string> = new EventEmitter<string>();
 
   constructor() {
     this.setTheme(this.getThemeFromLocalStorage());
@@ -28,10 +29,15 @@ export class ThemeService {
     }
   }
 
+  getCurrentTheme(): string {
+    return this.currentTheme() as string;
+  }
+
   private setTheme(theme: Theme) {
     this.currentTheme.set(theme)
     this.document.documentElement.setAttribute(this.dataTheme, theme);
     this.setThemeInLocalStorage(theme);
+    this.themeChange.emit(theme);
   }
 
   private setThemeInLocalStorage(theme: Theme) {
