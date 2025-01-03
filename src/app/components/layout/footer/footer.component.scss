@@ -1,0 +1,15 @@
+
+  nav{
+    justify-content: center;
+    ul{
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 100px;
+      p{
+        margin-bottom: 24px;
+        color: #878A92;
+      }
+    }
+  }
+
