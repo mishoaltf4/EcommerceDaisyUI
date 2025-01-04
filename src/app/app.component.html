@@ -1,6 +1,10 @@
+<app-header />
+
 <router-outlet />
 
-<div class="theme-changer absolute bottom-5 right-5 ">
+<app-footer />
+
+<div class="theme-changer fixed bottom-5 right-5 ">
   <label class="swap swap-rotate">
     <!-- this hidden checkbox controls the state -->
     <input type="checkbox" class="theme-controller" value="synthwave" [(ngModel)]="isLight"  (change)="themeService.toggleTheme()"/>
