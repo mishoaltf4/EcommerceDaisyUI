@@ -1,6 +1,6 @@
 <footer>
   <div class="top w-full  bg-neutral-white-W100 dark:bg-[#3c4557] ">
-    <div class="container flex flex-wrap justify-between items-center min-h-[200px] p-10 h-full max-[950px]:justify-center max-[950px]:text-center">
+    <div class="container flex flex-wrap justify-between items-center min-h-[200px] pt-10 pb-10 h-full max-[950px]:justify-center max-[950px]:text-center">
       <div class="text prose ">
         <h3 class="text-[24px] font-bold dark:text-white">Join Our Newsletter</h3>
         <p class="text-neutral-black-B500">We love to surprise our subscribers with occasional gifts.</p>
@@ -26,7 +26,7 @@
   <div class="bottom w-full">
     <div class="container pt-[74px] flex flex-wrap justify-between items-center max-[950px]:justify-center gap-7">
       <div class="w-[272px] flex flex-col gap-8">
-        <div class="logo"></div>
+        <img [src]="logo" alt="" width="168px" height="44px" />
         <p>DevCut is a YouTube channel for practical project-based learning.</p>
         <div class="icons flex gap-[26px]">
           <fa-icon [icon]="faGithub" />
@@ -57,8 +57,13 @@
         </nav>
       </div>
 
-      <div class="payments">
-        <p>ACCEPTED PAYMENTS</p>
+      <div class="payments flex flex-col gap-5">
+        <p class="text-neutral-black-B300">ACCEPTED PAYMENTS</p>
+        <div class="icons flex gap-[20px] saturate-0">
+          <img src="imgs/Footer/master.svg" alt="">
+          <img src="imgs/Footer/amex.svg" alt="">
+          <img src="imgs/Footer/visa.svg" alt="">
+        </div>
       </div>
     </div>
   </div>
