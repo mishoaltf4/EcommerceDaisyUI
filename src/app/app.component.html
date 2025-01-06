@@ -4,7 +4,7 @@
 
 <app-footer />
 
-<div class="theme-changer fixed bottom-5 right-5 ">
+<div class="theme-changer fixed bottom-5 right-5 z-20">
   <label class="swap swap-rotate">
     <!-- this hidden checkbox controls the state -->
     <input type="checkbox" class="theme-controller" value="synthwave" [(ngModel)]="isLight"  (change)="themeService.toggleTheme()"/>

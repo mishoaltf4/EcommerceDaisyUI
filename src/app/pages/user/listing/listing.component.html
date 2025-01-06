@@ -1,0 +1,103 @@
+<div class="listing">
+  <div class="container">
+    <div class="listing-inner flex gap-[21px]">
+      <div class="left-bar max-[800px]:hidden w-[248px] h-full border dark:border-[#3c4557] border-[#E6E7E8] rounded-[6px] px-[12px] py-[24px] flex flex-col gap-10">
+        <div class="filtering flex flex-col gap-3 w-full">
+          <h4>Categories</h4>
+
+          <ul>
+            <li><input type="checkbox" class="checkbox" (change)="getCategory($event)" [(ngModel)]="selectedFilter['Jackets']" name="Jackets">Perfume</li>
+            <li><input type="checkbox" class="checkbox" (change)="getCategory($event)" [(ngModel)]="selectedFilter['Trousers']" name="Trousers">Trousers</li>
+            <li><input type="checkbox" class="checkbox" (change)="getCategory($event)" [(ngModel)]="selectedFilter['Shoe']" name="Shoe">Shoe</li>
+            <li><input type="checkbox" class="checkbox" (change)="getCategory($event)" [(ngModel)]="selectedFilter['Handbag']" name="Handbag">Handbag</li>
+            <li><input type="checkbox" class="checkbox" (change)="getCategory($event)" [(ngModel)]="selectedFilter['Hat']" name="Hat">Hat</li>
+            <li><input type="checkbox" class="checkbox" (change)="getCategory($event)" [(ngModel)]="selectedFilter['Thermos']" name="Thermos">Thermos</li>
+          </ul>
+        </div>
+
+        <div class="filtering flex flex-col gap-3 w-full">
+          <h4>Colors</h4>
+          <ul class="flex items-center gap-[10px]">
+            <li><input type="checkbox" name="" class="checkbox rounded-full bg-semantic-blue-B400"></li>
+            <li><input type="checkbox" name="" class="checkbox rounded-full bg-semantic-yellow-Y400"></li>
+            <li><input type="checkbox" name="" class="checkbox rounded-full bg-semantic-green-G400 checked:bg-semantic-green-G900"></li>
+            <li><input type="checkbox" name="" class="checkbox rounded-full bg-semantic-blue-B900 checkbox-[#4078FF]"></li>
+          </ul>
+        </div>
+
+        <div class="filtering flex flex-col gap-3 w-full">
+          <h4>Size</h4>
+          <ul class="sizes flex flex-wrap gap-2">
+            <li>S</li>
+            <li>M</li>
+            <li>L</li>
+            <li>Xl</li>
+            <li>XXL</li>
+          </ul>
+        </div>
+
+        <div class="filtering flex flex-col gap-3 w-full">
+          <h4>price</h4>
+          <div class="slider-container">
+            <input
+              type="range"
+              min="0"
+              max="1000"
+              step="10"
+              [(ngModel)]="value"
+              (input)="updateTooltipPosition($event)"
+              class="slider"
+            />
+            <div
+              class="tooltip"
+              [style.left]="tooltipPosition"
+            >
+              $ {{ value.toFixed(2) }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="content w-[1000px]">
+        <div class="filters h-[77px] flex flex-col gap-3">
+          <h4>Aplied filters:</h4>
+          <div class="filter flex gap-3 flex-wrap">
+            <button *ngFor="let filter of appliedFilters"
+                    (click)="removeFilter(filter)"
+                    class="px-[16px] py-[2px] border rounded-full border-[#E6E7E8]"
+            >
+              {{filter}} <fa-icon [icon]="faXmark" />
+            </button>
+          </div>
+        </div>
+
+        <p>Showing {{products.length}} of 36 results.</p>
+
+        <div class="products flex flex-wrap justify-between max-[950px]:justify-around">
+          <div class="card mb-10 bg-base-100 w-[250px] hover:shadow-xl transition-all ease-linear rounded-none cursor-pointer dark:shadow-white"
+               *ngFor="let product of products"
+          >
+            <figure class="w-full h-[312px] bg-neutral-white-W100 dark:bg-[#3c4557]">
+              <img
+                [src]=product.image
+                alt="Shoes"/>
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title text-[14px]">
+                {{product.title}}
+              </h2>
+              <div class="card-actions justify-around">
+                <div class="badge badge-outline px-3 h-[28px]">{{product.isStock ? "In stock" : "Out of stock"}}</div>
+                <div class=""><p>$ {{product.price}}</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ng-container *ngIf="products.length === 0">
+          <h1>Products not found!</h1>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

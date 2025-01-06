@@ -135,13 +135,17 @@ export class ProductService {
       "sizes": ["S", "M", "L"],
       "description": "Trendy graphic T-shirt with a comfortable fit.",
       "reviews": [4, 4, 4, 3],
-      "category": "T-Shirts"
+      "category": "Jackets"
     }
   ]
 
 
   getProducts(): IProduct[] {
     return this.products;
+  }
+
+  getProductsByCategory(category: string): IProduct[]{
+    return this.products.filter(product => product.category === category);
   }
 
   constructor() { }
