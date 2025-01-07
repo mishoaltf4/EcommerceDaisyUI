@@ -5,5 +5,6 @@ import {ListingComponent} from './pages/user/listing/listing.component';
 export const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'home'},
   {path: 'home', component: HomeComponent},
-  {path: 'listing', component: ListingComponent}
+  {path: 'listing', component: ListingComponent},
+  {path: '**', component: HomeComponent}
 ];
