@@ -1,0 +1,51 @@
+<ng-container *ngIf="product === undefined">
+  <h1>Product wasn't found</h1>
+</ng-container>
+
+<ng-container *ngIf="product != undefined">
+  <div class="product">
+    <div class="container">
+      <div class="product-inner">
+
+        <div class="main flex flex-wrap gap-x-[120px]">
+          <div class="product-img w-[534px] h-[574px] bg-neutral-white-W100 flex items-center justify-center">
+            <img [src]="product.image" width="350px" height="404" alt="">
+          </div>
+
+          <div class="product-descr">
+            <div class="title">
+              <h3 class="font-bold">{{product.title}}</h3>
+              <div class="share"></div>
+            </div>
+
+            <div class="review-stock flex gap-2 h-7">
+              <div class="review px-4 h-full bg-neutral-white-W100 rounded-full flex items-center gap-2 justify-center">
+                <fa-icon [icon]="faStar" class="text-neutral-black-B500"/>
+                <p>4.2 - 52 reviews</p>
+              </div>
+              <p class="uppercase px-4 h-full border border-[#E6E7E8] rounded-full">{{product.isStock ? "in stock" : "out of stock"}}</p>
+            </div>
+
+            <h4 class="price">$ {{product.price.toFixed(2)}}</h4>
+
+            <div class="colors">
+              <p>Available Colors</p>
+
+            </div>
+
+            <div class="sizes"></div>
+
+            <div class="quanitty"></div>
+
+            <div class="btns">
+              <button></button>
+              <div class="favorite"></div>
+            </div>
+            <p>— Free shipping on orders $100+</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</ng-container>

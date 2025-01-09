@@ -5,15 +5,15 @@
   <div class="bottom w-full h-[84px]">
     <div class="container">
       <div class="bottom-inner flex items-center justify-between w-full h-[84px] max-[950px]:justify-around">
-        <img [src]="logo" alt="LOGO">
+        <img [src]="logo" alt="LOGO" routerLink="home" class="cursor-pointer">
         <nav class="max-[950px]:hidden">
           <ul class="text-neutral-black-B500 dark:text-white flex items-center gap-8">
-            <li>Home</li>
+            <li><a routerLink="home">Home</a></li>
             <li>
               <details class="dropdown">
                 <summary class="cursor-pointer">Categories <fa-icon [icon]="faAngle" /> </summary>
                 <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-                  <li><a>Item 1</a></li>
+                  <li><a routerLink="listing">All</a></li>
                   <li><a>Item 2</a></li>
                 </ul>
               </details>
@@ -22,6 +22,7 @@
             <li>Contact</li>
           </ul>
         </nav>
+
         <div class="profile flex items-center gap-8 max-[950px]:hidden">
           <label class="input input-bordered flex items-center gap-2">
             <input type="text" class="grow" placeholder="Search" />

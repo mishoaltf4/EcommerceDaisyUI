@@ -148,5 +148,9 @@ export class ProductService {
     return this.products.filter(product => product.category === category);
   }
 
+  getProductByID(id: number): IProduct {
+    return <IProduct>this.products.find(product => product.id === id);
+  }
+
   constructor() { }
 }
