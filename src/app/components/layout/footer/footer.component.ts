@@ -3,10 +3,11 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {faGithub, faInstagram, faYoutube} from '@fortawesome/free-brands-svg-icons';
 import {Subscription} from 'rxjs';
 import {ThemeService} from '../../../services/theme.service';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-footer',
-  imports: [FontAwesomeModule],
+  imports: [FontAwesomeModule, RouterLink],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss'
 })

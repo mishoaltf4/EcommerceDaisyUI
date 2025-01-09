@@ -5,6 +5,7 @@ import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {faXmark} from '@fortawesome/free-solid-svg-icons';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-listing',
@@ -18,7 +19,7 @@ export class ListingComponent {
 
   selectedFilter: {[key: string]: boolean} = {};
 
-  constructor(private productService: ProductService) {
+  constructor(private productService: ProductService, private router: Router) {
     this.products = productService.getProducts();
     console.log(this.products);
   }
@@ -54,4 +55,8 @@ export class ListingComponent {
 
   protected readonly faXmark = faXmark;
   protected readonly length = length;
+
+  goToProduct(id: number): void{
+    this.router.navigate(['/listing', id]);
+  }
 }
