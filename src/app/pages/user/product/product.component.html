@@ -7,43 +7,78 @@
     <div class="container">
       <div class="product-inner">
 
-        <div class="main flex flex-wrap gap-x-[120px]">
-          <div class="product-img w-[534px] h-[574px] bg-neutral-white-W100 flex items-center justify-center">
+        <div class="main flex flex-wrap gap-x-[120px] max-[1020px]:justify-center max-[1020px]:items-center">
+          <div class="product-img w-[534px] max-[1020px]:w-full h-[574px] bg-neutral-white-W100 dark:bg-[#3c4557] flex items-center justify-center">
             <img [src]="product.image" width="350px" height="404" alt="">
           </div>
 
-          <div class="product-descr">
+          <div class="product-descr max-[1020px]:mt-10">
             <div class="title">
               <h3 class="font-bold">{{product.title}}</h3>
               <div class="share"></div>
             </div>
 
             <div class="review-stock flex gap-2 h-7">
-              <div class="review px-4 h-full bg-neutral-white-W100 rounded-full flex items-center gap-2 justify-center">
+              <div class="review px-4 h-full bg-neutral-white-W100 dark:bg-[#3c4557] rounded-full flex items-center gap-2 justify-center">
                 <fa-icon [icon]="faStar" class="text-neutral-black-B500"/>
                 <p>4.2 - 52 reviews</p>
               </div>
               <p class="uppercase px-4 h-full border border-[#E6E7E8] rounded-full">{{product.isStock ? "in stock" : "out of stock"}}</p>
             </div>
 
-            <h4 class="price">$ {{product.price.toFixed(2)}}</h4>
+            <h4 class="price my-6">$ {{product.price.toFixed(2)}}</h4>
 
             <div class="colors">
               <p>Available Colors</p>
-
+              <ul class="flex gap-[14px] mt-[14px]">
+                <li><input type="checkbox" class="checkbox checkbox-info"></li>
+                <li><input type="checkbox" class="checkbox checkbox-primary"></li>
+                <li><input type="checkbox" class="checkbox checkbox-secondary"></li>
+                <li><input type="checkbox" class="checkbox checkbox-success"></li>
+              </ul>
             </div>
 
-            <div class="sizes"></div>
-
-            <div class="quanitty"></div>
-
-            <div class="btns">
-              <button></button>
-              <div class="favorite"></div>
+            <div class="sizes mt-[14px]">
+              <p>Select sizes</p>
+              <ul class="sizes flex flex-wrap gap-2 mt-[10px]">
+                <li>S</li>
+                <li>M</li>
+                <li>L</li>
+                <li>Xl</li>
+                <li>XXL</li>
+              </ul>
             </div>
-            <p>— Free shipping on orders $100+</p>
+
+            <div class="quantity mt-8">
+              <p>quantity</p>
+              <div class="something mt-[10px] flex w-[165px] h-11 justify-around items-center border dark:border-[#3c4557] border-neutral-white-W100">
+                <button class="text-[18px]" (click)="quantityDecrement()">-</button>
+                <p>{{quantity}}</p>
+                <button class="text-[18px]" (click)="quantityIncrement()">+</button>
+              </div>
+            </div>
+
+            <div class="btns mt-10 flex gap-4 flex-wrap">
+              <button class="w-[284px] h-11 bg-neutral-black-B900 text-white cursor-pointer rounded-[4px] hover:bg-[#182031] transition-all ease-linear">Add to cart</button>
+              <div class="favorite w-11 h-11 border border-neutral-white-W100 dark:border-[#3c4557] text-[20px] flex justify-center items-center rounded-[4px] cursor-pointer"><fa-icon [icon]="faHeart" /></div>
+            </div>
+            <p class="mt-[15px]">— Free shipping on orders $100+</p>
           </div>
         </div>
+
+        <section class="w-full flex justify-between mt-10">
+          <div class="btns w-[241px] flex flex-col gap-4 mt-[72px]">
+            <button class="w-full h-10 flex items-center justify-center bg-neutral-white-W100 active:bg-red-500 rounded-[8px]">Details</button>
+            <button class="w-full h-10 bg-transparent flex items-center justify-center active:bg-red-500 rounded-[8px]">Reviews</button>
+          </div>
+
+          <div class="content w-[750px]">
+            <div class="detail">
+              <app-detail />
+            </div>
+            <div class="review"></div>
+          </div>
+        </section>
 
       </div>
     </div>

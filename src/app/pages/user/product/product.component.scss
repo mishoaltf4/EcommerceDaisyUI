@@ -1,0 +1,15 @@
+.sizes{
+  li{
+    width: 40px;
+    height: 40px;
+    border: 1px solid #E6E7E8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &:hover{
+      border-color: #0E1422;
+    }
+  }
+}

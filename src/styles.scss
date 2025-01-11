@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root{
+  --dark-color: #3c4557;
+}
+
 *{
   margin: 0;
   padding: 0;
