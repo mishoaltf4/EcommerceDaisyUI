@@ -7,6 +7,7 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {faStar} from '@fortawesome/free-solid-svg-icons';
 import {faHeart} from '@fortawesome/free-regular-svg-icons';
 import {DetailComponent} from '../../../components/product/detail/detail.component';
+import {CartService} from '../../../services/cart.service';
 
 @Component({
   selector: 'app-product',
@@ -20,13 +21,19 @@ import {DetailComponent} from '../../../components/product/detail/detail.compone
 })
 export class ProductComponent implements OnInit{
   product: IProduct | undefined;
+  products: IProduct[] | null = null;
   protected quantity: number = 1;
 
-  constructor(private productService: ProductService, private activedRoute: ActivatedRoute){}
+  constructor(
+    private productService: ProductService,
+    private activedRoute: ActivatedRoute,
+    private cartService: CartService
+  ){}
 
   ngOnInit() {
     const productID:number = Number(this.activedRoute.snapshot.params['id']);
     this.product = this.productService.getProductByID(productID);
+    this.products = this.productService.getProducts();
   }
 
   protected quantityIncrement():void{
@@ -37,6 +44,10 @@ export class ProductComponent implements OnInit{
     if(this.quantity != 1){
       this.quantity--;
     }
+  }
+
+  addToCart(product:IProduct){
+    this.cartService.addToCart(product);
   }
 
   protected readonly faStar = faStar;

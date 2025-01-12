@@ -1,0 +1,57 @@
+<div class="cart">
+  <div class="container">
+    <div class="cart-inner flex justify-between">
+      <div class="orders w-[70%]">
+        <h5>your cart</h5>
+
+        <div class="line my-6"></div>
+
+        <div class="products w-[full] flex flex-col gap-10">
+          <ng-container *ngIf="cart.length >= 1">
+            <div class="product flex justify-between items-center" *ngFor="let product of cart">
+              <div class="img w-20 h-20 bg-neutral-white-W100 flex items-center justify-center">
+                <img [src]="product.image" width="45px" height="60px" alt="">
+              </div>
+
+              <div class="title">
+                <p class="font-medium">{{product.title}}</p>
+                <p class="text-[12px] text-neutral-black-B500">Color: {{product.colors}}  --- Size: {{product.sizes}} </p>
+              </div>
+
+              <div class="price-quantity flex items-center gap-[30px]">
+                <p class="font-medium">$ {{product.price.toFixed(2)}}</p>
+                <div class="quantity flex items-center justify-around w-[107px] h-10 border border-neutral-white-W100">
+                  <button>-</button>
+                  <p>1</p>
+                  <button>+</button>
+                </div>
+                <div class="close w-10 h-10 bg-neutral-white-W100 flex items-center justify-center">
+                </div>
+              </div>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="cart.length === 0">
+            <p>Your cart is empty!</p>
+            <p>Buy now</p>
+            <button>go to shop</button>
+          </ng-container>
+        </div>
+      </div>
+
+      <div class="summery w-[25%] border border-neutral-white-W100 px-6 py-8">
+        <h6 class="mb-10 font-semibold">Order Summary</h6>
+        <li><p>subtotal:</p> <p>$ 90.00</p></li>
+        <li><p>Shipping:</p> <p>free</p></li>
+        <li><p>Tax:</p> <p>$ 3.00</p></li>
+
+        <div class="line mt-6"></div>
+
+        <li><p>total:</p> <p>$ 100.00</p></li>
+
+        <button class="w-full h-11 btn btn-neutral my-8">Checkout</button>
+
+        <a href="" class="text-center text-[12px] mx-auto w-[110px]">Continue Shopping</a>
+      </div>
+    </div>
+  </div>
+</div>

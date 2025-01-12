@@ -59,7 +59,10 @@
             </div>
 
             <div class="btns mt-10 flex gap-4 flex-wrap">
-              <button class="w-[284px] h-11 bg-neutral-black-B900 text-white cursor-pointer rounded-[4px] hover:bg-[#182031] transition-all ease-linear">Add to cart</button>
+              <button class="
+              w-[284px] h-11 bg-neutral-black-B900 text-white cursor-pointer rounded-[4px] hover:bg-[#182031] transition-all ease-linear"
+                      (click)="addToCart(product)"
+              >Add to cart</button>
               <div class="favorite w-11 h-11 border border-neutral-white-W100 dark:border-[#3c4557] text-[20px] flex justify-center items-center rounded-[4px] cursor-pointer"><fa-icon [icon]="faHeart" /></div>
             </div>
             <p class="mt-[15px]">— Free shipping on orders $100+</p>
@@ -79,6 +82,32 @@
             <div class="review"></div>
           </div>
         </section>
+
+        <div class="same">
+          <h3 >You might also like</h3>
+          <p class="text-neutral-black-B300 uppercase">SIMILAR PRODUCTS</p>
+
+          <div class="products mt-[96px] flex flex-wrap justify-between max-[950px]:justify-around gap-[30px]">
+            <div class="card bg-base-100 w-[250px] hover:shadow-xl transition-all ease-linear rounded-none cursor-pointer"
+                 *ngFor="let product of products | slice: 0 : 4"
+            >
+              <figure class="w-full h-[312px] bg-neutral-white-W100 dark:bg-[#3c4557]">
+                <img
+                  [src]=product.image
+                  alt="Shoes"/>
+              </figure>
+              <div class="card-body">
+                <h2 class="card-title text-[14px]">
+                  {{product.title}}
+                </h2>
+                <div class="card-actions justify-around">
+                  <div class="badge badge-outline px-4 py-[2px] h-[28px]">{{product.isStock ? "In stock" : "Out of stock"}}</div>
+                  <div class=""><p>$ {{product.price}}</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
       </div>
     </div>
