@@ -36,6 +36,10 @@ export class ProductComponent implements OnInit{
     this.products = this.productService.getProducts();
   }
 
+  getProduct(productID:number){
+    this.product = this.productService.getProductByID(productID);
+  }
+
   protected quantityIncrement():void{
     this.quantity++;
   }
