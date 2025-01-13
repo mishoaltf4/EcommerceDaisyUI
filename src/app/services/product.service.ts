@@ -18,7 +18,8 @@ export class ProductService {
       "sizes": ["S", "M", "L", "XL"],
       "description": "A classic unisex T-shirt made of 100% cotton.",
       "reviews": [4, 5, 5, 4],
-      "category": "T-Shirts"
+      "category": "T-Shirts,",
+      "quantity": 1,
     },
     {
       "id": 2,
@@ -31,7 +32,8 @@ export class ProductService {
       "sizes": ["M", "L", "XL"],
       "description": "Stylish and durable denim jacket perfect for any season.",
       "reviews": [5, 5, 4, 5],
-      "category": "Jackets"
+      "category": "Jackets",
+      "quantity": 1,
     },
     {
       "id": 3,
@@ -44,7 +46,8 @@ export class ProductService {
       "sizes": ["S", "M", "L"],
       "description": "Comfortable and stylish chinos pants for casual and formal wear.",
       "reviews": [4, 4, 5, 3],
-      "category": "Pants"
+      "category": "Pants",
+      "quantity": 1,
     },
     {
       "id": 4,
@@ -57,7 +60,8 @@ export class ProductService {
       "sizes": ["XS", "S", "M", "L"],
       "description": "Lightweight and airy dress perfect for summer outings.",
       "reviews": [5, 4, 4, 5],
-      "category": "Dresses"
+      "category": "Dresses",
+      "quantity": 1,
     },
     {
       "id": 5,
@@ -70,7 +74,8 @@ export class ProductService {
       "sizes": ["S", "M", "L", "XL", "XXL"],
       "description": "Comfortable hoodie with a kangaroo pocket and adjustable hood.",
       "reviews": [5, 4, 5, 4],
-      "category": "Sweatshirts"
+      "category": "Sweatshi,",
+      "quantity": 1,
     },
     {
       "id": 6,
@@ -83,7 +88,8 @@ export class ProductService {
       "sizes": ["M", "L", "XL"],
       "description": "Breathable and flexible shorts for workouts and sports activities.",
       "reviews": [4, 4, 4, 5],
-      "category": "Shorts"
+      "category": "Shorts",
+      "quantity": 1,
     },
     {
       "id": 7,
@@ -96,7 +102,8 @@ export class ProductService {
       "sizes": ["M", "L", "XL"],
       "description": "Warm and stylish flannel shirt for a casual look.",
       "reviews": [5, 4, 4, 4],
-      "category": "Shirts"
+      "category": "Shirts",
+      "quantity": 1,
     },
     {
       "id": 8,
@@ -109,7 +116,8 @@ export class ProductService {
       "sizes": ["M", "L", "XL", "XXL"],
       "description": "Functional cargo pants with multiple pockets for storage.",
       "reviews": [4, 5, 4, 4],
-      "category": "Pants"
+      "category": "Pants",
+      "quantity": 1,
     },
     {
       "id": 9,
@@ -122,7 +130,8 @@ export class ProductService {
       "sizes": ["M", "L", "XL"],
       "description": "Warm and lightweight puffer jacket for cold weather.",
       "reviews": [5, 5, 5, 5],
-      "category": "Jackets"
+      "category": "Jackets",
+      "quantity": 1,
     },
     {
       "id": 10,
@@ -135,7 +144,8 @@ export class ProductService {
       "sizes": ["S", "M", "L"],
       "description": "Trendy graphic T-shirt with a comfortable fit.",
       "reviews": [4, 4, 4, 3],
-      "category": "Jackets"
+      "category": "Jackets",
+      "quantity": 1,
     }
   ]
 

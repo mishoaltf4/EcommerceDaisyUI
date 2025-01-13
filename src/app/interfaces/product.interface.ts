@@ -9,5 +9,6 @@ export interface IProduct {
   sizes: string[],
   description: string,
   reviews: number[],
-  category: string
+  category: string,
+  quantity: number,
 }

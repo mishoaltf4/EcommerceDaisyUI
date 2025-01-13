@@ -6,6 +6,7 @@ import {faShieldHalved} from '@fortawesome/free-solid-svg-icons';
 import {ProductService} from '../../../services/product.service';
 import {IProduct} from '../../../interfaces/product.interface';
 import {CommonModule} from '@angular/common';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -17,8 +18,16 @@ export class HomeComponent{
 
   products: IProduct[];
 
-  constructor(private productService: ProductService) {
+  constructor(private productService: ProductService, private router: Router) {
     this.products = this.productService.getProducts();
+  }
+
+  goToProduct(productId: number) {
+    this.router.navigate(['/listing/'+productId]);
+  }
+
+  goToListing(){
+    this.router.navigate(['/listing']);
   }
 
 

@@ -5,7 +5,10 @@
         <div class="text flex flex-col gap-3 max-[950px]:items-center">
           <h2 class="text-[32px] font-semibold">Fresh Arrivals Online</h2>
           <p class="text-[14px] text-neutral-black-B500">Discover Our Newest Collection Today.</p>
-          <button class="w-[183px] h-11  mt-9 bg-neutral-black-B900 text-white rounded-[4px] cursor-pointer hover:bg-neutral-black-B100 transition-all ease-linear">View Collection</button>
+          <button
+            class="w-[183px] h-11  mt-9 bg-neutral-black-B900 text-white rounded-[4px] cursor-pointer hover:bg-neutral-black-B100 transition-all ease-linear"
+            (click)="goToListing()"
+          >View Collection</button>
         </div>
         <img src="imgs/home/hero.png" alt="" class="absolute right-0 max-[950px]:hidden" width="440" height="382px" >
       </div>
@@ -55,6 +58,7 @@
       <div class="products mt-[96px] flex flex-wrap justify-between max-[950px]:justify-around gap-[30px]">
         <div class="card bg-base-100 w-[250px] hover:shadow-xl transition-all ease-linear rounded-none cursor-pointer"
           *ngFor="let product of products | slice: 0 : 4"
+             (click)="goToProduct(product.id)"
         >
           <figure class="w-full h-[312px] bg-neutral-white-W100 dark:bg-[#3c4557]">
             <img
@@ -82,7 +86,10 @@
         <div class="text flex flex-col gap-6 max-[850px]:items-center max-[850px]:text-center">
           <h3 class="text-[24px] font-bold text-neutral-black-B900">Browse Our Fashion Paradise!</h3>
           <p class="text-[14px] text-neutral-black-B500 w-[460px] max-[850px]:w-full">Step into a world of style and explore our diverse collection of clothing categories.</p>
-          <button class="w-[177px] h-11 bg-neutral-black-B900 text-white rounded-[4px]">Start Browsing</button>
+          <button
+            class="w-[177px] h-11 bg-neutral-black-B900 text-white rounded-[4px]"
+            (click)="goToListing()"
+          >Start Browsing</button>
         </div>
 
         <img src="https://s3-alpha-sig.figma.com/img/8cc9/f607/e22ea11cc9c0fb0df83525da3489524f?Expires=1736726400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=GkFaJcirWQowZpJkbiDotITCuV0UuwJjXean19p3AXXhpwmHr~YKEe368pSlxYhRBY~fZgDn2uXhHL9r~T3HVHEeIMb86amcTI6m71XZLtjemU9V978jqE4iuswnkfJfEjhkNjvCiKSuD0Iq5SBmipAdwxZUcFMZcEmX-cpRrhtuizxcGGwTnghTAGyaWsoFrHd~dJsao8JmYlPBa2jong-m1Tqf6bt64Yemx~NhgVehxm8tNgwjKk4lo~5JCAJ7e7RfuDP3Vujk-sjPQusI6aDNZo053cZdvCwdbGJPPMOnlzH1VAzOVmsZQolR0cG7~3gr-qmpEkv2PBpaUhLX5w__"
@@ -99,6 +106,7 @@
             <div class="products mt-[96px] flex flex-wrap justify-between max-[950px]:justify-around gap-[30px]">
               <div class="card bg-base-100 w-[250px] hover:shadow-xl transition-all ease-linear rounded-none cursor-pointer"
                    *ngFor="let product of products | slice: 4 : 8"
+                   (click)="goToProduct(product.id)"
               >
                 <figure class="w-full h-[312px] bg-neutral-white-W100 dark:bg-[#3c4557]">
                   <img
@@ -124,6 +132,7 @@
             <div class="products mt-[96px] flex flex-wrap justify-between max-[950px]:justify-around gap-[30px]">
               <div class="card bg-base-100 w-[250px] hover:shadow-xl transition-all ease-linear rounded-none cursor-pointer"
                    *ngFor="let product of products | slice: 6"
+                   (click)="goToProduct(product.id)"
               >
                 <figure class="w-full h-[312px] bg-neutral-white-W100 dark:bg-[#3c4557]">
                   <img
