@@ -90,6 +90,7 @@
           <div class="products mt-[96px] flex flex-wrap justify-between max-[950px]:justify-around gap-[30px]">
             <div class="card bg-base-100 w-[250px] hover:shadow-xl transition-all ease-linear rounded-none cursor-pointer"
                  *ngFor="let product of products | slice: 0 : 4"
+                 (click)="getProduct(product.id)"
             >
               <figure class="w-full h-[312px] bg-neutral-white-W100 dark:bg-[#3c4557]">
                 <img

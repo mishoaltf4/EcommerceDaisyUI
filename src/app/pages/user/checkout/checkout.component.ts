@@ -5,20 +5,16 @@ import {CommonModule} from '@angular/common';
 import {RouterLink} from '@angular/router';
 
 @Component({
-  selector: 'app-cart',
-  imports: [
-    CommonModule,
-    RouterLink
-  ],
-  templateUrl: './cart.component.html',
-  styleUrl: './cart.component.scss'
+  selector: 'app-checkout',
+  imports: [CommonModule, RouterLink],
+  templateUrl: './checkout.component.html',
+  styleUrl: './checkout.component.scss'
 })
-export class CartComponent {
+export class CheckoutComponent {
   cart: IProduct[];
   protected subtotal: number;
   protected total: number;
   protected tax: number;
-
 
   constructor(private cartService: CartService) {
     this.cart = this.cartService.getCart();
@@ -26,4 +22,5 @@ export class CartComponent {
     this.total = this.cartService.total;
     this.tax = this.cartService.tax;
   }
+
 }

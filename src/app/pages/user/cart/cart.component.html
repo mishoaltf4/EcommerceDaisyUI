@@ -1,7 +1,7 @@
 <div class="cart">
   <div class="container">
-    <div class="cart-inner flex justify-between">
-      <div class="orders w-[70%]">
+    <div class="cart-inner flex justify-between max-[950px]:flex-col max-[950px]:items-center gap-y-10">
+      <div class="orders w-[70%] max-[950px]:w-full max-h-[440px] overflow-hidden overflow-y-scroll">
         <h5>your cart</h5>
 
         <div class="line my-6"></div>
@@ -22,7 +22,7 @@
                 <p class="font-medium">$ {{product.price.toFixed(2)}}</p>
                 <div class="quantity flex items-center justify-around w-[107px] h-10 border border-neutral-white-W100">
                   <button>-</button>
-                  <p>1</p>
+                  <p>{{product.quantity}}</p>
                   <button>+</button>
                 </div>
                 <div class="close w-10 h-10 bg-neutral-white-W100 flex items-center justify-center">
@@ -38,19 +38,19 @@
         </div>
       </div>
 
-      <div class="summery w-[25%] border border-neutral-white-W100 px-6 py-8">
+      <div class="summery w-[25%] border border-neutral-white-W100 px-6 py-8 max-[950px]:w-full">
         <h6 class="mb-10 font-semibold">Order Summary</h6>
-        <li><p>subtotal:</p> <p>$ 90.00</p></li>
+        <li><p>subtotal:</p> <p>$ {{subtotal.toFixed(2)}}</p></li>
         <li><p>Shipping:</p> <p>free</p></li>
-        <li><p>Tax:</p> <p>$ 3.00</p></li>
+        <li><p>Tax:</p> <p>$ {{tax.toFixed(2)}}</p></li>
 
         <div class="line mt-6"></div>
 
-        <li><p>total:</p> <p>$ 100.00</p></li>
+        <li><p>total:</p> <p>$ {{total.toFixed(2)}}</p></li>
 
-        <button class="w-full h-11 btn btn-neutral my-8">Checkout</button>
+        <button class="w-full h-11 btn btn-neutral my-8" routerLink="/checkout">Checkout</button>
 
-        <a href="" class="text-center text-[12px] mx-auto w-[110px]">Continue Shopping</a>
+        <a routerLink="/listing" class="text-center text-[12px] mx-auto w-[110px] underline">Continue Shopping</a>
       </div>
     </div>
   </div>

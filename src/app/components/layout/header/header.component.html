@@ -53,12 +53,12 @@
             <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4 gap-5">
               <nav class="">
                 <ul class="text-neutral-black-B500 dark:text-white flex flex-col items-center gap-8">
-                  <li>Home</li>
+                  <li routerLink="/"><a>Home</a></li>
                   <li>
                     <details class="dropdown">
                       <summary class="cursor-pointer">Categories </summary>
                       <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-                        <li><a>Item 1</a></li>
+                        <li routerLink="/listing"><a>all</a></li>
                         <li><a>Item 2</a></li>
                       </ul>
                     </details>
@@ -81,7 +81,7 @@
                       clip-rule="evenodd" />
                   </svg>
                 </label>
-                <fa-icon [icon]="faCart" />
+                <a class="cursor-pointer"><fa-icon [icon]="faCart" routerLink="/cart"/></a>
                 <fa-icon [icon]="faUser" />
               </div>
             </ul>
