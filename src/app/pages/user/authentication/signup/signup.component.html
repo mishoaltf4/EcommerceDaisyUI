@@ -1,0 +1,43 @@
+<div class="register">
+  <div class="container">
+    <div class="register-inner flex justify-center items-center">
+      <form [formGroup]="registerForm" class="w-[320px] flex flex-col gap-4">
+        <button class="w-full h-11 border border-black">Continue with Google</button>
+
+        <p class="my-4">or</p>
+
+        <li>
+          <label>Name:</label>
+          <input type="text" class="w-full h-11 border border-black bg-transparent" formControlName="name">
+          <ng-container *ngIf="registerForm.get('name')?.touched">
+            <div class="inputErrorMessage" *ngIf="registerForm.get('name')?.errors?.['required']">Required</div>
+          </ng-container>
+        </li>
+        <li>
+          <label>Email:</label>
+          <input type="text" class="w-full h-11 border border-black bg-transparent" formControlName="email">
+          <ng-container *ngIf="registerForm.get('email')?.touched">
+            <div class="inputErrorMessage" *ngIf="registerForm.get('email')?.errors?.['required']">Required</div>
+            <div class="inputErrorMessage" *ngIf="registerForm.get('email')?.errors?.['email']">Email is invalid</div>
+          </ng-container>
+        </li>
+        <li>
+          <label>Password:</label>
+          <input [type]="inputType" class="w-full h-11 border border-black bg-transparent" formControlName="password">
+          <div class="showingpass flex gap-4">
+            <p (click)="showPassword()" class="cursor-pointer">Show password! <fa-icon [icon]="inputType === 'password'? faEye : faEyeSlash"></fa-icon></p>
+          </div>
+
+          <ng-container *ngIf="registerForm.get('password')?.touched">
+            <div class="inputErrorMessage" *ngIf="registerForm.get('password')?.errors?.['required']">Required</div>
+            <div class="inputErrorMessage" *ngIf="registerForm.get('password')?.errors?.['minlength']">MinLengthOfPass is 6</div>
+          </ng-container>
+        </li>
+        <p>By creating an account you agree with our Terms of Service, Privacy Policy,</p>
+        <button class="w-full h-11 drawer-button bg-neutral-black-B900" [disabled]="!registerForm.valid" (click)="signUp()">Submit</button>
+        <a class="text-center text-[14px] text-neutral-black-B500" routerLink="/login">Already have an account?</a>
+      </form>
+    </div>
+  </div>
+</div>
+

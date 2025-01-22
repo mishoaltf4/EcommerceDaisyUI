@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {ProductService} from '../../../services/product.service';
 import {IProduct} from '../../../interfaces/product.interface';
 import {CommonModule} from '@angular/common';
@@ -13,7 +13,7 @@ import {Router} from '@angular/router';
   templateUrl: './listing.component.html',
   styleUrl: './listing.component.scss'
 })
-export class ListingComponent {
+export class ListingComponent{
   products: IProduct[];
   appliedFilters: string[] = [];
 
